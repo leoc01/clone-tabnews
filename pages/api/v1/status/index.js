@@ -9,6 +9,7 @@ async function status(request, response) {
     text: "SELECT count(*)::int FROM pg_stat_activity WHERE datname = $1;",
     values: [databaseName],
   });
+
   const openedConnections = openedConnectionsResult.rows[0].count;
   const versionResult = await database.query("SHOW server_version;");
   const version = versionResult.rows[0].server_version;
