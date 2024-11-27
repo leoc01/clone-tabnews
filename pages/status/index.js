@@ -27,7 +27,11 @@ function UpdatedAt() {
     UpdatedAtText = new Date(data.updated_at).toLocaleString("pt-BR");
   }
 
-  return <div>Última atualização: {UpdatedAtText}</div>;
+  return (
+    <div>
+      <strong>Última atualização:</strong> {UpdatedAtText}
+    </div>
+  );
 }
 
 function DatabaseInfo() {
@@ -48,9 +52,15 @@ function DatabaseInfo() {
   return (
     <>
       <h2>Database Information</h2>
-      <div>Postgres version: {version}</div>
-      <div>Max connections: {maxConnections}</div>
-      <div>Opened connections: {openedConections}</div>
+      <div>
+        <strong>Versão do postgres:</strong> {version}
+      </div>
+      <div>
+        <strong>Conexões permitidas:</strong> {maxConnections}
+      </div>
+      <div>
+        <strong>Conexões abertas:</strong> {openedConections}
+      </div>
     </>
   );
 }
